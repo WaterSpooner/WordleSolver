@@ -18,7 +18,6 @@ def removeNonYellow(index, words, letter):
         if word[index] != letter:
             newWords.append(word)
     return newWords
-
 def removeBlackLetters(index,words, letter,ignoreLetters):
     newWords = []
     for word in words:
