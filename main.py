@@ -15,7 +15,7 @@ def removeNonGreen(index, words, letter):
 def removeNonYellow(index, words, letter):
     newWords = []
     for word in words:
-        if word[index] != letter:
+        if word[index] != letter and letter in word:
             newWords.append(word)
     return newWords
 def removeBlackLetters(index,words, letter,ignoreLetters):
@@ -44,6 +44,9 @@ def wordScores(words,letterDict):
             if letters[letter] ==0:
                 letters[letter] +=1
                 score += letterDict[letter]
+            else:
+                letters[letter] +=1
+                score += letterDict[letter]*(0.26/letters[letter])
         scores.append(score)
     return scores
 def checkWord(guessedWord,finalWord):
